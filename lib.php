@@ -1,0 +1,44 @@
+<?php
+
+
+
+function local_smuc_content_edit_restriction_extend_navigation($nav) {
+
+    global $CFG,$PAGE,$COURSE,$USER;
+
+    $url   =   $_SERVER['REQUEST_URI'];
+
+
+
+    $pagepath = explode('?',$url);
+
+    $pagepath = (is_array($pagepath))   ? $pagepath[0]  :  $pagepath ;
+
+    $path       =   explode("/",$pagepath);
+
+// if a user is on the course page and doesn't have the relevant capability the specified icons should be hidden
+   // if ($PAGE->pagelayout == 'course' && !has_capability('local/smuc_content_edit_restriction:overriderestriction', context_course::instance($COURSE->id))) {
+
+    if ($path[1] == "course") {
+
+        $courseid   =   required_param('id',PARAM_INT);
+
+        $contentfunctions       =   new     \local_smuc_content_edit_restriction\content_restriction();
+
+        if ($contentfunctions->is_restricted_course($courseid)) {
+            if ($pagepath == "/course/edit.php") {
+
+                $PAGE->requires->css(new \moodle_url('/local/smuc_content_edit_restriction/style/restrictions.css'));
+                $PAGE->requires->jquery();
+                $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_settings_restrictions.js', array());
+
+            } else if ($pagepath == "/course/view.php") {
+
+                $PAGE->requires->jquery();
+                $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_view_restrictions.js', array());
+
+
+            }
+        }
+    }
+}
