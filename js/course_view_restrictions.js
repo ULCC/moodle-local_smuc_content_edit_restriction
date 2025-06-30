@@ -21,12 +21,15 @@ $( document ).ready(function() {
         console.log(        $('#section-0').children('.content').find('ul.section').children('li.modtype_label').prop('draggable'));
         //stop draggable first section
         $('#section-0').children('.content').find('ul.section').children('li.modtype_label').prop('draggable', false);
+        $('#section-0').children('.content').find('ul.section').children('li.modtype_label').prop('style', 'pointer-events: none');
         console.log(        $('#section-0').children('.content').find('ul.section').children('li.modtype_label').prop('draggable'));
 
 
         console.log($('#section-0').children('.content').find('ul.section ').children('li.modtype_hvp').prop('draggable'));
         //stop first section h5p from being dragged
         $('#section-0').children('.content').find('ul.section ').children('li.modtype_hvp').prop('draggable', false);
+
+        $('#section-0').children('.content').find('ul.section ').children('li.modtype_hvp').prop('style', 'pointer-events: none');
         console.log($('#section-0').children('.content').find('ul.section ').children('li.modtype_hvp').prop('draggable'));
 
         //section 1
@@ -34,6 +37,7 @@ $( document ).ready(function() {
         console.log($('#section-1').children('.course-section-header').prop('draggable'));
         //stop the rsource header from being dragged
         $('#section-1').children('.course-section-header').prop('draggable', false);
+        $('#section-1').children('.course-section-header').prop('style', 'pointer-events: none');
         console.log($('#section-1').children('.course-section-header').prop('draggable'));
 
         console.log("label");
@@ -41,6 +45,7 @@ $( document ).ready(function() {
         console.log($('#section-1').children('.content').find('ul.section').children('li.modtype_label').prop('draggable'));
         //stop draggable first section
         $('#section-1').children('.content').find('ul.section').children('li.modtype_label').prop('draggable', false);
+        $('#section-1').children('.content').find('ul.section').children('li.modtype_label').prop('style', 'pointer-events: none');
         console.log($('#section-1').children('.content').find('ul.section').children('li.modtype_label').prop('draggable'));
 
         console.log("LTI");
@@ -48,14 +53,17 @@ $( document ).ready(function() {
 
         //stop draggable first section
         $('#section-1').children('.content').find('ul.section').children('li.modtype_lti').prop('draggable', false);
+        $('#section-1').children('.content').find('ul.section').children('li.modtype_lti').prop('style', 'pointer-events: none');
         console.log(        $('#section-1').children('.content').find('ul.section').children('li.modtype_lti').prop('draggable'));
 
         //section 2
 
         //stop header from being draggable
         $('#section-2').children('.course-section-header').prop('draggable', false);
+        $('#section-2').children('.course-section-header').prop('style', 'pointer-events: none');
 
         $('#section-2').children('.content').find('ul.section ').children('li.modtype_hvp').prop('draggable', false);
+        $('#section-2').children('.content').find('ul.section ').children('li.modtype_hvp').prop('style', 'pointer-events: none');
 
 
         //section 3
@@ -63,12 +71,14 @@ $( document ).ready(function() {
         console.log(        $('#section-3').children('.content').find('ul.section').children('li.modtype_label').prop('draggable'));
         //stop draggable first section
         $('#section-3').children('.content').find('ul.section').children('li.modtype_label').prop('draggable', false);
+        $('#section-3').children('.content').find('ul.section').children('li.modtype_label').prop('style', 'pointer-events: none');
         console.log(        $('#section-3').children('.content').find('ul.section').children('li.modtype_label').prop('draggable'));
 
 
         console.log($('#section-3').children('.content').find('ul.section ').children('li.modtype_hvp').prop('draggable'));
         //stop first section h5p from being dragged
         $('#section-3').children('.content').find('ul.section ').children('li.modtype_hvp').prop('draggable', false);
+        $('#section-3').children('.content').find('ul.section ').children('li.modtype_hvp').prop('style', 'pointer-events: none');
         console.log($('#section-3').children('.content').find('ul.section ').children('li.modtype_hvp').prop('draggable'));
     }, 5000);
 

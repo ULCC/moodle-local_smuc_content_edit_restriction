@@ -8,13 +8,13 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
 
     $url   =   $_SERVER['REQUEST_URI'];
 
-
-
     $pagepath = explode('?',$url);
 
     $pagepath = (is_array($pagepath))   ? $pagepath[0]  :  $pagepath ;
 
     $path       =   explode("/",$pagepath);
+
+
 
 // if a user is on the course page and doesn't have the relevant capability the specified icons should be hidden
    // if ($PAGE->pagelayout == 'course' && !has_capability('local/smuc_content_edit_restriction:overriderestriction', context_course::instance($COURSE->id))) {
@@ -23,7 +23,7 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
 
         $courseid   =   required_param('id',PARAM_INT);
 
-        $contentfunctions       =   new     \local_smuc_content_edit_restriction\content_restriction();
+        $contentfunctions       =   new     \local_smuc_content_edit_restriction\content_edit_restriction();
 
         if ($contentfunctions->is_restricted_course($courseid)) {
             if ($pagepath == "/course/edit.php") {
