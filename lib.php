@@ -21,27 +21,27 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
 
     if ($path[1] == "course") {
 
-        is_siteadmin();
+        $courseid   =   optional_param('id',false,PARAM_INT);
 
-        $courseid   =   required_param('id',PARAM_INT);
+        if (!empty($courseid)) {
 
-        $contentfunctions       =   new     \local_smuc_content_edit_restriction\content_edit_restriction();
+            $contentfunctions = new     \local_smuc_content_edit_restriction\content_edit_restriction();
 
-        if ($contentfunctions->is_restricted_course($courseid) && !is_siteadmin($USER->id) && !has_capability('local/smuc_content_edit_restriction:overriderestriction', context_course::instance($COURSE->id))) {
-            if ($pagepath == "/course/edit.php") {
+            if ($contentfunctions->is_restricted_course($courseid) && !is_siteadmin($USER->id) && !has_capability('local/smuc_content_edit_restriction:overriderestriction', context_course::instance($COURSE->id))) {
+                if ($pagepath == "/course/edit.php") {
 
-                $PAGE->requires->css(new \moodle_url('/local/smuc_content_edit_restriction/styles/restrictions.css'));
-                $PAGE->requires->jquery();
-                $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_settings_restrictions.js', array());
-
-
-
-            } else if ($pagepath == "/course/view.php") {
-
-                $PAGE->requires->jquery();
-                $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_view_restrictions.js', array());
+                    $PAGE->requires->css(new \moodle_url('/local/smuc_content_edit_restriction/styles/restrictions.css'));
+                    $PAGE->requires->jquery();
+                    $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_settings_restrictions.js', array());
 
 
+                } else if ($pagepath == "/course/view.php") {
+
+                    $PAGE->requires->jquery();
+                    $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_view_restrictions.js', array());
+
+
+                }
             }
         }
     }
