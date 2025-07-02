@@ -52,7 +52,7 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
         }
 
         if ($contentfunctions->is_restricted_course($courseid) && !is_siteadmin($USER->id) && !has_capability('local/smuc_content_edit_restriction:overriderestriction', context_course::instance($COURSE->id))) {
-            if ($pagepath == "/user/index.php" || $pagepath == "/grade/report/index.php" || $pagepath == "/report/edit.php"  || $pagepath == "/report/edit.php" || $pagepath == "/local/importtosection/index.php") {
+            if ($pagepath == "/user/index.php" || $pagepath == "/grade/report/index.php" || $pagepath == "/report/view.php"  || $pagepath == "l/grade/report/grader/index.php" || $pagepath == "/local/importtosection/index.php") {
                 $PAGE->requires->jquery();
                 $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_sidebar_restrictions.js', array());
             }
