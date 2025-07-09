@@ -21,10 +21,9 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
 
     if ($path[1] == "course") {
 
-        $courseid   =   optional_param('id',$COURSE->id,PARAM_INT);
+        $courseid = optional_param('id', $COURSE->id, PARAM_INT);
 
         if (!empty($courseid)) {
-
 
 
             if ($contentfunctions->is_restricted_course($courseid) && !is_siteadmin($USER->id) && !has_capability('local/smuc_content_edit_restriction:overriderestriction', context_course::instance($COURSE->id))) {
@@ -33,28 +32,14 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
                     $PAGE->requires->css(new \moodle_url('/local/smuc_content_edit_restriction/styles/restrictions.css'));
                     $PAGE->requires->jquery();
                     $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_settings_restrictions.js', array());
-                    $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_sidebar_restrictions.js', array());
+
 
                 } else if ($pagepath == "/course/view.php") {
                     $PAGE->requires->css(new \moodle_url('/local/smuc_content_edit_restriction/styles/view_restrictions.css'));
                     $PAGE->requires->jquery();
                     $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_view_restrictions.js', array());
-                    $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_sidebar_restrictions.js', array());
+
                 }
-            }
-        }
-    } else if ($path[1] == "user" || $path[1] == "grade" || $path[1] == "report" || $path[1] == "importtosection" || $path[1] == "local") {
-
-        if ($path[1] == "report") {
-            $courseid = optional_param('courseid', $COURSE->id, PARAM_INT);
-        } else {
-            $courseid = optional_param('id', $COURSE->id, PARAM_INT);
-        }
-
-        if ($contentfunctions->is_restricted_course($courseid) && !is_siteadmin($USER->id) && !has_capability('local/smuc_content_edit_restriction:overriderestriction', context_course::instance($COURSE->id))) {
-            if ($pagepath == "/user/index.php" || $pagepath == "/grade/report/index.php" || $pagepath == "/report/view.php"  || $pagepath == "/grade/report/grader/index.php" || $pagepath == "/local/importtosection/index.php") {
-                $PAGE->requires->jquery();
-                $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_sidebar_restrictions.js', array());
             }
         }
     }
