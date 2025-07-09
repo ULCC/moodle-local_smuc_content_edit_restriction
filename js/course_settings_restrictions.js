@@ -299,7 +299,7 @@ $( document ).ready(function() {
 
     //
     // Your word for 'Manager'
-   /* $("#id_role_1").prop('disabled', true);
+   $("#id_role_1").prop('disabled', true);
 
     $('<input>').attr({
         type: 'hidden',
@@ -393,11 +393,5 @@ $( document ).ready(function() {
         name: 'role_8',
         value: $("#id_role_8").val()
     }).appendTo(form);
-
-*/
-
-
-
-
 
 });
