@@ -29,6 +29,8 @@ $( document ).ready(function() {
 
         $('#section-0').children('.content').find('ul.section ').children('li.modtype_hvp').prop('style', 'pointer-events: none');
 
+        $('#section-0').children('.content').find('ul.section ').children('li.modtype_hvp').find('.action-menu').prop('style', 'pointer-events: all');
+
 
         //section 1
         //stop the rsource header from being dragged
@@ -51,6 +53,7 @@ $( document ).ready(function() {
 
         $('#section-2').children('.content').find('ul.section ').children('li.modtype_hvp').prop('draggable', false);
         $('#section-2').children('.content').find('ul.section ').children('li.modtype_hvp').prop('style', 'pointer-events: none');
+        $('#section-2').children('.content').find('ul.section ').children('li.modtype_hvp').find('.action-menu').prop('style', 'pointer-events: all');
 
 
         //section 3
@@ -62,6 +65,7 @@ $( document ).ready(function() {
         //stop first section h5p from being dragged
         $('#section-3').children('.content').find('ul.section ').children('li.modtype_hvp').prop('draggable', false);
         $('#section-3').children('.content').find('ul.section ').children('li.modtype_hvp').prop('style', 'pointer-events: none');
+        $('#section-3').children('.content').find('ul.section ').children('li.modtype_hvp').find('.action-menu').prop('style', 'pointer-events: all');
 
     }, 2000);
 
@@ -91,6 +95,8 @@ function sectionzero()       {
 
     //remove label menu dots
     $('#section-0').children('.content').find('ul.section').children('li.modtype_label').find('.action-menu').detach();
+
+    remove_hvp_menu_items($('#section-0'));
 
  }
 
@@ -170,6 +176,8 @@ function sectiontwo()       {
     //remove first section hvp delete
     $('#section-2').children('.content').find('ul.section ').children('li.modtype_hvp').find('.dropdown-menu-right').children('.editing_delete').detach();
 
+    remove_hvp_menu_items($('#section-2'));
+
 }
 
 
@@ -201,5 +209,37 @@ function sectionthree()       {
 
     //remove  hvp menu
     $('#section-3').children('.content').find('ul.section').children('li.modtype_hvp').find('.dropdown-menu-right').detach();
+
+    remove_hvp_menu_items($('#section-3'));
+
+}
+
+
+function remove_hvp_menu_items(element)    {
+
+    //remove first section hvp duplicate
+    $(element).children('.content').find('ul.section').children('li.modtype_hvp').find('.dropdown-menu-right').children('.editing_duplicate').detach();
+
+    //remove first section hvp  move right
+    $(element).children('.content').find('ul.section ').children('li.modtype_hvp').find('.dropdown-menu-right').children('.editing_makeunavailable').detach();
+
+
+    //remove first section hvp  move right
+    $(element).children('.content').find('ul.section ').children('li.modtype_hvp').find('.dropdown-menu-right').children('.editing_moveright').detach();
+
+    //remove first section hvp  hide/show
+    $(element).children('.content').find('ul.section ').children('li.modtype_hvp').find('.dropdown-menu-right').children('.editing_hide').detach();
+    $(element).children('.content').find('ul.section ').children('li.modtype_hvp').find('.dropdown-menu-right').children('.editing_show').detach();
+
+
+    //remove first section hvp  move
+    $(element).children('.content').find('ul.section ').children('li.modtype_hvp').find('.dropdown-menu-right').children('.editing_movecm').detach();
+
+    //remove first section hvp delete
+    $(element).children('.content').find('ul.section ').children('li.modtype_hvp').find('.dropdown-menu-right').children('.editing_delete').detach();
+
+    //remove first section hvp delete
+    $(element).children('.content').find('ul.section ').children('li.modtype_hvp').find('.dropdown-menu-right').children('.editing_assign').detach();
+
 
 }
