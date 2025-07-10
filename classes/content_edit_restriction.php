@@ -28,12 +28,15 @@ class content_edit_restriction       {
 
            $course = $DB->get_record('course', array('id' => $courseid));
 
-           foreach ($restrictedcourseformat as $rcf) {
+           if (!empty($course)) {
+               foreach ($restrictedcourseformat as $rcf) {
+                   if (!empty($course->shortname)) {
+                       if (str_starts_with($course->shortname, $rcf)) {
+                           $is_restricted = true;
+                       }
+                   }
 
-               if (str_starts_with($course->shortname, $rcf)) {
-                   $is_restricted = true;
                }
-
            }
        }
 

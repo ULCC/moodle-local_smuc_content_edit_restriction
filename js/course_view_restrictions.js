@@ -79,9 +79,18 @@ function sectionzero()       {
 
     $('#section-0').children('.course-section-header').find('.dropdown-menu-right').detach();
 
-// H5P menu
+    //remove section header menu dots
+    $('#section-0').children('.course-section-header').find('.action-menu').detach();
 
-    $('#section-0').children('.content').find('ul.section').children('li.modtype_label').find('.dropdown-menu-right').detach();
+
+    //remove H5p title quick edit
+    $('#section-0').children('.content').find('ul.section ').children('li.modtype_hvp').find('.media-body').find('.inplaceeditable').find('.quickeditlink').detach();
+
+
+    $('#section-0').children('.content').find('ul.section ').children('li.modtype_hvp').children('.activityname').children('.editing_hide').detach();
+
+    //remove label menu dots
+    $('#section-0').children('.content').find('ul.section').children('li.modtype_label').find('.action-menu').detach();
 
  }
 
@@ -95,17 +104,30 @@ function sectionone()       {
 
     $("[data-value='Your Resource List']").children('.quickeditlink').detach();
 
+
     //remove section header menu
     $('#section-1').children('.course-section-header').find('.dropdown-menu-right').detach();
 
+    //remove section header menu dots
+    $('#section-1').children('.course-section-header').find('.action-menu').detach();
+
+
     //remove first section edit update
     $('#section-1').children('.content').find('ul.section').children('li.modtype_label').find('.dropdown-menu-right').detach();
+
+    //remove label menu dots
+    $('#section-1').children('.content').find('ul.section').children('li.modtype_label').find('.action-menu').detach();
+
 
     //remove edit leganto title link
     $('#section-1').children('.content').find('ul.section').children('li.modtype_lti').find('.quickeditlink').detach();
 
     // remove Leganto resource list menu
     $('#section-1').children('.content').find('ul.section ').children('li.modtype_lti ').find('.dropdown-menu-right').detach();
+
+    //remove label menu dots
+    $('#section-1').children('.content').find('ul.section').children('li.modtype_lti').find('.action-menu').detach();
+
 
 }
 
@@ -122,6 +144,10 @@ function sectiontwo()       {
 
     //remove section header menu
     $('#section-2').children('.course-section-header').find('.dropdown-menu-right').detach();
+
+    //remove section header menu dots
+    $('#section-2').children('.course-section-header').find('.action-menu').detach();
+
 
     //remove first section hvp duplicate
     $('#section-2').children('.content').find('ul.section').children('li.modtype_hvp').find('.dropdown-menu-right').children('.editing_duplicate').detach();
@@ -161,8 +187,17 @@ function sectionthree()       {
     //remove section header menu
     $('#section-3').children('.course-section-header').find('.dropdown-menu-right').detach();
 
+    //remove section header menu dots
+    $('#section-3').children('.course-section-header').find('.action-menu').detach();
+
+
+
     //remove  label menu
     $('#section-3').children('.content').find('ul.section').children('li.modtype_label').find('.dropdown-menu-right').detach();
+
+    //remove label menu dots
+    $('#section-3').children('.content').find('ul.section').children('li.modtype_label').find('.action-menu').detach();
+
 
     //remove  hvp menu
     $('#section-3').children('.content').find('ul.section').children('li.modtype_hvp').find('.dropdown-menu-right').detach();
