@@ -27,14 +27,32 @@ defined('MOODLE_INTERNAL') || die();
 
 if ($hassiteconfig) {
 
+
     // Create the new settings page for local plugin
     $settings = new admin_settingpage('local_smuc_content_edit_restriction', get_string('contentrestrictionsettings', 'local_smuc_content_edit_restriction'));
-
 
     $name = get_string('courseidentformat', 'local_smuc_content_edit_restriction');
     $description = get_string('courseidentformat_desc', 'local_smuc_content_edit_restriction');
     $element = new admin_setting_configtext('local_smuc_content_edit_restriction/courseidentformat', $name, $description,'');
     $settings->add($element);
+
+    $choices = array(0 => get_string('no'),
+        1 => get_string('yes'));
+
+
+    $element = new admin_setting_configselect('local_smuc_content_edit_restriction/enable_cs', get_string('enable_cs', 'local_smuc_content_edit_restriction'),
+        get_string('enable_cs_desc', 'local_smuc_content_edit_restriction'), 0, $choices);
+    $settings->add($element);
+
+
+    $element = new admin_setting_configselect('local_smuc_content_edit_restriction/enable_cc', get_string('enable_cc', 'local_smuc_content_edit_restriction'),
+        get_string('enable_cc_desc', 'local_smuc_content_edit_restriction'), 0, $choices);
+    $settings->add($element);
+
+
+
+
+
 
 
     $ADMIN->add('localplugins', $settings);
