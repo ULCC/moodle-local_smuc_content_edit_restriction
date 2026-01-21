@@ -3,7 +3,7 @@ $( document ).ready(function() {
     var form    =   $("#id_fullname").closest("form");
 
 
-    console.log( "ready!" );
+    console.log( "course settings ready!" );
 
 
     //fullname

@@ -30,7 +30,7 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
         if (!empty($courseid)) {
 
 
-            if ($contentfunctions->is_restricted_course($courseid) && !is_siteadmin($USER->id) && !has_capability('local/smuc_content_edit_restriction:overriderestriction', context_course::instance($COURSE->id))) {
+            //if ($contentfunctions->is_restricted_course($courseid) && !is_siteadmin($USER->id) && !has_capability('local/smuc_content_edit_restriction:overriderestriction', context_course::instance($COURSE->id))) {
                 if ($pagepath == "/course/edit.php" && !empty($config->enable_cs)) {
 
                     $PAGE->requires->css(new \moodle_url('/local/smuc_content_edit_restriction/styles/restrictions.css'));
@@ -42,12 +42,13 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
                     $PAGE->requires->css(new \moodle_url('/local/smuc_content_edit_restriction/styles/view_restrictions.css'));
                     $PAGE->requires->jquery();
                     $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_view_restrictions.js', array());
+                    $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_sidebar_restrictions.js', array());
 
                 } else if ($pagepath == "/course/modedit.php" && !empty($config->enable_cc)) {
 
                     $sql = "SELECT 		* 
-                         FROM 		mdl_course_modules 	cm,
-		                            mdl_modules		m
+                         FROM 		{course_modules} 	cm,
+		                            {modules}		m
                         WHERE 		cm.module		=	m.id
                         AND		    m.name			=	'hvp'
                         AND		    cm.id = {$moduleid}";
@@ -63,6 +64,23 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
 
 
                     }
+                }   else if ($pagepath == "/course/editsection.php" && !empty($config->enable_cc)) {
+
+                    $sectionid  =   optional_param('id',false,PARAM_INT);
+
+
+
+                    $section    =   $DB->get_record('course_sections',array('id'=>$sectionid));
+
+
+                    if ($section && ($section->section == 0 || $section->section == 1 || $section->section == 2 || $section->section == 3) ) {
+
+                        $PAGE->requires->css(new \moodle_url('/local/smuc_content_edit_restriction/styles/view_restrictions.css'));
+                        $PAGE->requires->jquery();
+                        $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_section_settings_restrictions.js', array());
+                        $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_sidebar_restrictions.js', array());
+                    }
+
                 }
             }
         } else if (!empty($moduleid))       {
@@ -70,6 +88,6 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
 
 
         }
-    }
+   // }
 
 }
