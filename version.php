@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 
-$plugin->version  = 2025062700;
+$plugin->version  = 2026012100;
 $plugin->requires = 2021051700;  // Requires this Moodle version 4.5
 $plugin->maturity = MATURITY_STABLE;
 $plugin->component = 'local_smuc_content_edit_restriction'; // Full name of the plugin (used for diagnostics)
