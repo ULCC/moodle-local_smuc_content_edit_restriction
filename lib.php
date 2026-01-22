@@ -30,7 +30,7 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
         if (!empty($courseid)) {
 
 
-            //if ($contentfunctions->is_restricted_course($courseid) && !is_siteadmin($USER->id) && !has_capability('local/smuc_content_edit_restriction:overriderestriction', context_course::instance($COURSE->id))) {
+            if ($contentfunctions->is_restricted_course($courseid) && !is_siteadmin($USER->id) && !has_capability('local/smuc_content_edit_restriction:overriderestriction', context_course::instance($COURSE->id))) {
                 if ($pagepath == "/course/edit.php" && !empty($config->enable_cs)) {
 
                     $PAGE->requires->css(new \moodle_url('/local/smuc_content_edit_restriction/styles/restrictions.css'));
@@ -88,6 +88,6 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
 
 
         }
-   // }
+    }
 
 }
