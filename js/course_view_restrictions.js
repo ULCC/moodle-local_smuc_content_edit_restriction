@@ -102,7 +102,7 @@ function sectionone()       {
     $("[data-value='Your Resource List']").html('Your Resource List');
 
     //remove the move memnu option
-    $('#section-1').children('.course-section-header').find('.dropdown-menu-right').children('.move').detach();
+    $('#section-1').find('.dropdown-menu-right').children('.move').detach();
 
 
     //remove section header menu
@@ -123,8 +123,8 @@ function sectiontwo()       {
    // $("[data-value='Assessment Guidance']").children('.quickeditlink').detach();
     $("[data-value='Assessment Guidance']").html('Assessment Guidance');
     //remove the move memnu option
-    $('#section-2').children('.course-section-header').find('.dropdown-menu-right').children('.move').detach();
 
+    $('#section-2').find('.dropdown-menu-right').children('.move').detach();
     //remove edit title link
   //  $('#section-2').children('.content').find('ul.section').children('li.modtype_hvp').find('.quickeditlink').detach();
 
@@ -150,7 +150,7 @@ function sectionthree()       {
   //  $("[data-value='Assessment Guidance']").children('.quickeditlink').detach();
     $("[data-value='Submissions, Feedback, Results']").html('Submissions, Feedback, Results');
     //remove the move memnu option
-    $('#section-3').children('.course-section-header').find('.dropdown-menu-right').children('.move').detach();
+    $('#section-3').find('.dropdown-menu-right').children('.move').detach();
 
     //remove title edit link
     $('#section-3').children('.content').find('ul.section').children('li.modtype_hvp').find('.quickeditlink').detach();
