@@ -1,7 +1,7 @@
 
 $( document ).ready(function() {
 
-    console.log("Course view restrictions");
+    console.log("Course view restrictions new");
 
 //these functions deactive the menus in each of the sections
     sectionzero();
@@ -66,8 +66,10 @@ function sectionzero()       {
 
     console.log("Section 0 restrictions");
 
-    $('#section-0').children('.quickeditlink').detach();
-    $('#section-0').children('.quickeditlink').off('click');
+    //$("[data-value='About Your Module']").children('.quickeditlink').detach();
+    //$("[data-value='About Your Module']").children('.quickeditlink').off('click');
+    //replace the link in the header with just the html text
+    $("[data-value='About Your Module']").html('About Your Module');
     //$('#section-0').children('.course-section-header').find('.dropdown-menu-right').detach();
 
     //remove section header menu dots
@@ -94,8 +96,10 @@ function sectionzero()       {
 function sectionone()       {
 
     console.log("Section 1 restrictions new");
-    $("[data-value='Your Resource List']").children('.quickeditlink').off('click');
-    $("[data-value='Your Resource List']").children('.quickeditlink').detach();
+   // $("[data-value='Your Resource List']").children('.quickeditlink').off('click');
+   // $("[data-value='Your Resource List']").children('.quickeditlink').detach();
+    //replace the link in the header with just the html text
+    $("[data-value='Your Resource List']").html('Your Resource List');
 
     //remove the move memnu option
     $('#section-1').children('.course-section-header').find('.dropdown-menu-right').children('.move').detach();
@@ -115,9 +119,9 @@ function sectionone()       {
 function sectiontwo()       {
 
     console.log("Section 2 restrictions");
-    $("[data-value='Assessment Guidance']").children('.quickeditlink').off('click');
-    $("[data-value='Assessment Guidance']").children('.quickeditlink').detach();
-
+ //   $("[data-value='Assessment Guidance']").children('.quickeditlink').off('click');
+   // $("[data-value='Assessment Guidance']").children('.quickeditlink').detach();
+    $("[data-value='Assessment Guidance']").html('Assessment Guidance');
     //remove the move memnu option
     $('#section-2').children('.course-section-header').find('.dropdown-menu-right').children('.move').detach();
 
@@ -142,9 +146,9 @@ function sectiontwo()       {
 function sectionthree()       {
 
     console.log("Section 3 restrictions");
-    $("[data-value='Assessment Guidance']").children('.quickeditlink').off('click');
-    $("[data-value='Assessment Guidance']").children('.quickeditlink').detach();
-
+  //  $("[data-value='Assessment Guidance']").children('.quickeditlink').off('click');
+  //  $("[data-value='Assessment Guidance']").children('.quickeditlink').detach();
+    $("[data-value='Submissions, Feedback, Results']").html('Submissions, Feedback, Results');
     //remove the move memnu option
     $('#section-3').children('.course-section-header').find('.dropdown-menu-right').children('.move').detach();
 
