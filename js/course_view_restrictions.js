@@ -66,8 +66,8 @@ function sectionzero()       {
 
     console.log("Section 0 restrictions");
 
-    $("[data-value='About Your Module']").children('.quickeditlink').detach();
-    $("[data-value='About Your Module']").children('.quickeditlink').off('click');
+    $('#section-0').children('.quickeditlink').detach();
+    $('#section-0').children('.quickeditlink').off('click');
     //$('#section-0').children('.course-section-header').find('.dropdown-menu-right').detach();
 
     //remove section header menu dots
