@@ -20,7 +20,7 @@ $( document ).ready(function() {
 
         //section 0
         //stop header from being draggable
-        $('#section-0').children('.course-section-header').prop('draggable', false);
+        $('#section-0').find('.course-section-header').prop('draggable', false);
 
         //stop draggable first section
         $('#section-0').children('.content').find('ul.section').children('li.modtype_label').prop('draggable', false);
@@ -29,7 +29,7 @@ $( document ).ready(function() {
 
         //section 1
         //stop the rsource header from being dragged
-        $('#section-1').children('.course-section-header').prop('draggable', false);
+        $('#section-1').find('.course-section-header').prop('draggable', false);
         //$('#section-1').children('.course-section-header').prop('style', 'pointer-events: none');
 
         //stop draggable first section
@@ -40,14 +40,14 @@ $( document ).ready(function() {
         //section 2
 
         //stop header from being draggable
-        $('#section-2').children('.course-section-header').prop('draggable', false);
+        $('#section-2').find('.course-section-header').prop('draggable', false);
         //$('#section-2').children('.course-section-header').prop('style', 'pointer-events: none');
 
 
         //section 3
 
         //stop header from being draggable
-        $('#section-3').children('.course-section-header').prop('draggable', false);
+        $('#section-3').find('.course-section-header').prop('draggable', false);
 
         //stop draggable first section
         $('#section-3').children('.content').find('ul.section').children('li.modtype_label').prop('draggable', false);
@@ -70,6 +70,7 @@ function sectionzero()       {
     //$("[data-value='About Your Module']").children('.quickeditlink').off('click');
     //replace the link in the header with just the html text
     $("[data-value='About Your Module']").html('About Your Module');
+    $("[data-value='About Your Module ']").html('About Your Module');
     //$('#section-0').children('.course-section-header').find('.dropdown-menu-right').detach();
 
     //remove section header menu dots

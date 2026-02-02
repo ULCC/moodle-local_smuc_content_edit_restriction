@@ -1,19 +1,19 @@
 
 $( document ).ready(function() {
-    var form    =   $("#id_name_value").closest("form");
+    var form    =   $("#id_name").closest("form");
 
 
     console.log( "ready!" );
 
 
     //fullname
-    $("#id_name_value").prop('disabled', true);
+    $("#id_name").prop('disabled', true);
 
     $('<input>').attr({
         type: 'hidden',
-        id: 'id_name_value',
+        id: 'id_name',
         name: 'name[value]',
-        value: $("#id_name_value").val()
+        value: $("#id_name").val()
     }).appendTo(form);
 
 });
