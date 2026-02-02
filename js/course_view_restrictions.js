@@ -76,16 +76,6 @@ function sectionzero()       {
     //remove section header menu dots
     //$('#section-0').children('.course-section-header').find('.action-menu').detach();
 
-
-    //remove H5p title quick edit
-    $('#section-0').children('.content').find('ul.section ').children('li.modtype_hvp').find('.media-body').find('.inplaceeditable').find('.quickeditlink').detach();
-
-
-    $('#section-0').children('.content').find('ul.section ').children('li.modtype_hvp').children('.activityname').children('.editing_hide').detach();
-
-    //remove label menu dots
-    $('#section-0').children('.content').find('ul.section').children('li.modtype_label').find('.action-menu').detach();
-
     //remove_hvp_menu_items($('#section-0'));
 
  }
@@ -130,13 +120,6 @@ function sectiontwo()       {
   //  $('#section-2').children('.content').find('ul.section').children('li.modtype_hvp').find('.quickeditlink').detach();
 
 
-    //remove section header menu
-    //$('#section-2').children('.course-section-header').find('.dropdown-menu-right').detach();
-
-    //remove section header menu dots
-    //$('#section-2').children('.course-section-header').find('.action-menu').detach();
-
-
     //remove_hvp_menu_items($('#section-2'));
 
 }
@@ -153,27 +136,12 @@ function sectionthree()       {
     //remove the move memnu option
     $('#section-3').find('.dropdown-menu-right').children('.move').detach();
 
-    //remove title edit link
-    $('#section-3').children('.content').find('ul.section').children('li.modtype_hvp').find('.quickeditlink').detach();
-
     //remove section header menu
    // $('#section-3').children('.course-section-header').find('.dropdown-menu-right').detach();
 
     //remove section header menu dots
     //$('#section-3').children('.course-section-header').find('.action-menu').detach();
 
-
-
-
-    //remove  label menu
-    $('#section-3').children('.content').find('ul.section').children('li.modtype_label').find('.dropdown-menu-right').detach();
-
-    //remove label menu dots
-    $('#section-3').children('.content').find('ul.section').children('li.modtype_label').find('.action-menu').detach();
-
-
-    //remove  hvp menu
-    $('#section-3').children('.content').find('ul.section').children('li.modtype_hvp').find('.dropdown-menu-right').detach();
 
    // remove_hvp_menu_items($('#section-3'));
 
