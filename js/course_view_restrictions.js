@@ -30,24 +30,28 @@ $( document ).ready(function() {
         //section 1
         //stop the rsource header from being dragged
         $('#section-1').find('.course-section-header').prop('draggable', false);
-        //$('#section-1').children('.course-section-header').prop('style', 'pointer-events: none');
+        $('#section-1').children('.course-section-header').prop('style', 'pointer-events: none');
 
         //stop draggable first section
         $('#section-1').children('.content').find('ul.section').children('li.modtype_label').prop('draggable', false);
         $('#section-1').children('.content').find('ul.section').children('li.modtype_label').prop('style', 'pointer-events: none');
+        $('#section-1').find('.course-section-header').removeClass( "draggable" );
 
 
         //section 2
 
         //stop header from being draggable
         $('#section-2').find('.course-section-header').prop('draggable', false);
-        //$('#section-2').children('.course-section-header').prop('style', 'pointer-events: none');
+        $('#section-2').children('.course-section-header').prop('style', 'pointer-events: none');
+        $('#section-2').find('.course-section-header').removeClass( "draggable" );
 
 
         //section 3
 
         //stop header from being draggable
         $('#section-3').find('.course-section-header').prop('draggable', false);
+
+        $('#section-3').find('.course-section-header').removeClass( "draggable" );
 
         //stop draggable first section
         $('#section-3').children('.content').find('ul.section').children('li.modtype_label').prop('draggable', false);
