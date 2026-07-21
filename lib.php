@@ -44,13 +44,13 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
                     $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_view_restrictions.js', array());
                     $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_sidebar_restrictions.js', array());
 
-                } else if ($pagepath == "/course/modedit.php" && !empty($config->enable_cc)) {
+                } else if ($pagepath == "/course/modedit.php" && !empty($config->enable_cc) && !empty($update)) {
 
                     $sql = "SELECT 		* 
                          FROM 		{course_modules} 	cm,
 		                            {modules}		m
                         WHERE 		cm.module		=	m.id
-                        AND		    m.name			=	'hvp'
+                        AND		    m.name			=	'h5p'
                         AND		    cm.id = {$moduleid}";
 
 
@@ -68,7 +68,7 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
 
                     $sectionid  =   optional_param('id',false,PARAM_INT);
 
-                    $section    =   $DB->get_record('course_sections',array('id'=>$sectionid));
+                    $section    =   (!empty($sectionid))    ? $DB->get_record('course_sections',array('id'=>$sectionid)) : false;
 
 
                     if ($section && ($section->section == 0 || $section->section == 1 || $section->section == 2 || $section->section == 3) ) {
