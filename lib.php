@@ -42,7 +42,7 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
                     $PAGE->requires->css(new \moodle_url('/local/smuc_content_edit_restriction/styles/view_restrictions.css'));
                     $PAGE->requires->jquery();
                     $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_view_restrictions.js', array());
-                    $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_sidebar_restrictions.js', array());
+                    //$PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_sidebar_restrictions.js', array());
 
                 } else if ($pagepath == "/course/modedit.php" && !empty($config->enable_cc) && !empty($update)) {
 
@@ -76,8 +76,14 @@ function local_smuc_content_edit_restriction_extend_navigation($nav) {
                         $PAGE->requires->css(new \moodle_url('/local/smuc_content_edit_restriction/styles/view_restrictions.css'));
                         $PAGE->requires->jquery();
                         //$PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_section_settings_restrictions.js', array());
-                        $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_sidebar_restrictions.js', array());
+                       // $PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_sidebar_restrictions.js', array());
                     }
+
+                } else if ($pagepath == "/course/section.php" && !empty($config->enable_cc)) {
+
+                    $PAGE->requires->jquery();
+                    $PAGE->requires->js('/local/smuc_content_edit_restriction/js/individual_course_section_restrictions.js', array());
+                    //$PAGE->requires->js('/local/smuc_content_edit_restriction/js/course_sidebar_restrictions.js', array());
 
                 }
             }

@@ -10,7 +10,10 @@ $( document ).ready(function() {
     {
         console.log('New 1 Course sidebar restrictions loaded');
 
+        $('#courseindexsection0-title').prop('style', 'pointer-events: none');
         $('#courseindexcollapse0').children('.unlist').children('.courseindex-item').prop('style', 'pointer-events: none');
+
+        $('#courseindexsection1-title').prop('style', 'pointer-events: none');
         $('#courseindexcollapse1').children('.unlist').children('.courseindex-item').prop('style', 'pointer-events: none');
         $('#courseindexsection1').prop('draggable', false);
         $('#courseindexsection1').prop('aria-busy', true);
@@ -18,9 +21,11 @@ $( document ).ready(function() {
          $('#courseindexsection1').prop('style', 'pointer-events: none');
      //   $('#courseindexcollapse1').children('.unlist').children('.courseindex-item').prop('style', 'pointer-events: none');
 
+        $('#courseindexsection2-title').prop('style', 'pointer-events: none');
         $('#courseindexsection2').prop('style', 'pointer-events: none');
         $('#courseindexcollapse2').children('.unlist').children('.courseindex-item').prop('style', 'pointer-events: none');
 
+        $('#courseindexsection3-title').prop('style', 'pointer-events: none');
         $('#courseindexsection3').prop('style', 'pointer-events: none');
         $('#courseindexcollapse3').children('.unlist').children('.courseindex-item').prop('style', 'pointer-events: none');
 
